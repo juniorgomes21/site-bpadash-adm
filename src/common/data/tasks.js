@@ -5,7 +5,7 @@ const tasks = [
     tasks: [
       {
         id: 11,
-        description: "Create a apcodes Dashboard UI",
+        description: "Create a bpadashAdm Dashboard UI",
         members: [
           {
             username: "",
@@ -40,7 +40,7 @@ const tasks = [
       },
       {
         id: 13,
-        description: "Create a apcodes Logo",
+        description: "Create a bpadashAdm Logo",
         members: [
           {
             username: "Fransis",

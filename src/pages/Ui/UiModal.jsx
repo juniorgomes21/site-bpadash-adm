@@ -19,7 +19,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 const UiModal = () => {
 
   //meta title
-  document.title = "Models | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Models | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const [modal_standard, setmodal_standard] = useState(false);
   const [modal_large, setmodal_large] = useState(false);

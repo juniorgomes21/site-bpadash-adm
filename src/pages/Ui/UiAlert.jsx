@@ -16,7 +16,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiAlert = () => {
   //meta title
-  document.title = "Alert | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Alert | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const [show, setShow] = useState(false);
 

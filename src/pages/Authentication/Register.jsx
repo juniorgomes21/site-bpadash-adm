@@ -18,7 +18,7 @@ import profileImg from "../../assets/images/profile-img.png";
 import logoImg from "../../assets/images/logo.svg";
 
 const Register = props => {
-  document.title = "Register | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Register | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
 
@@ -69,7 +69,7 @@ const Register = props => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Free Register</h5>
-                        <p>Get your free apcodes account now.</p>
+                        <p>Get your free bpadashAdm account now.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -177,7 +177,7 @@ const Register = props => {
 
                       <div className="mt-4 text-center">
                         <p className="mb-0">
-                          By registering you agree to the apcodes{" "}
+                          By registering you agree to the bpadashAdm{" "}
                           <Link to="#" className="text-primary">
                             Terms of Use
                           </Link>
@@ -196,8 +196,8 @@ const Register = props => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} apcodes. Crafted with{" "}
-                  <i className="mdi mdi-heart text-danger" /> by apcodes
+                  © {new Date().getFullYear()} bpadashAdm. Crafted with{" "}
+                  <i className="mdi mdi-heart text-danger" /> by bpadashAdm
                 </p>
               </div>
             </Col>

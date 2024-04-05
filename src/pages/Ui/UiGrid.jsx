@@ -16,7 +16,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 const UiGrid = () => {
 
   //meta title
-  document.title = "Grid | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Grid | bpadashAdm - Vite React Admin & Dashboard Template";
 
   return (
     <React.Fragment>

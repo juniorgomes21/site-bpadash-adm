@@ -16,7 +16,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 const UiButtons = () => {
 
   //meta title
-  document.title = "Buttons | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Buttons | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const [drp_link, setdrp_link] = useState(false);
 

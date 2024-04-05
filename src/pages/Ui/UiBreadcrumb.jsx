@@ -15,7 +15,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 function UiBreadcrumb(props) {
     //meta title
-  document.title = "Breadcrumb | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Breadcrumb | bpadashAdm - Vite React Admin & Dashboard Template";
     return (
         <React.Fragment>
             <div className="page-content">

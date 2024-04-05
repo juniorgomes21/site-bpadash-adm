@@ -11,7 +11,7 @@ import RatingTooltip from "react-rating-tooltip";
 const UiRating = () => {
 
   //meta title
-  document.title = "Rating | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Rating | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const [def, setdef] = useState("");
   const [rate, setRate] = useState("");

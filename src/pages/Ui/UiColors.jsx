@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiColors = () => {
   //meta title
-  document.title = "Colors | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Colors | bpadashAdm - Vite React Admin & Dashboard Template";
   return (
     <React.Fragment>
       <div className="page-content">

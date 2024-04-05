@@ -9,7 +9,7 @@ import "react-rangeslider/lib/index.css"
 const UiRangeSlider = () => {
 
    //meta title
-   document.title = "Range Slider | apcodes - Vite React Admin & Dashboard Template";
+   document.title = "Range Slider | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const formatkg = value => "$ " + value
   const formatdollar = value => value + " kg"

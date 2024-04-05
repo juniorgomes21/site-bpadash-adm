@@ -20,7 +20,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 const UiDrawer = () => {
 
     //meta title
-    document.title = "OffCanvas | apcodes - Vite React Admin & Dashboard Template";
+    document.title = "OffCanvas | bpadashAdm - Vite React Admin & Dashboard Template";
 
     const [open, setOpen] = useState(false);
     const [isTop, setIsTop] = useState(false);

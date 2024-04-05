@@ -44,7 +44,7 @@ const UiLightbox = (props) => {
   const selectedPlace = {}
 
   //meta title
-  document.title = "Lightbox | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Lightbox | bpadashAdm - Vite React Admin & Dashboard Template";
 
   const [photoIndex, setphotoIndex] = useState(0);
   const [isFits, setisFits] = useState(false);
@@ -142,7 +142,7 @@ const UiLightbox = (props) => {
                             setisFits(true);
                           }}
                           className="img-fluid"
-                          alt="apcodes"
+                          alt="bpadashAdm"
                           src={img2}
                           width="145"
                         />

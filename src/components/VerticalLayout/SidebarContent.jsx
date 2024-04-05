@@ -85,7 +85,7 @@ const SidebarContent = (props) => {
     }
 
     return (
-        <React.Fragment>
+        <>
             <SimpleBar className="h-100" ref={ref}>
                 <div id="sidebar-menu">
                     <ul className="metismenu list-unstyled" id="side-menu">
@@ -118,7 +118,7 @@ const SidebarContent = (props) => {
                     </ul>
                 </div>
             </SimpleBar>
-        </React.Fragment>
+        </>
     );
 };
 

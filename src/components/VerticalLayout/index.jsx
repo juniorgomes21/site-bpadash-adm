@@ -22,7 +22,7 @@ import RightSidebar from "../CommonForBoth/RightSidebar";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 
-const Layout = (props) => {
+function Layout(props) {
     const dispatch = useDispatch();
 
     const {
@@ -47,7 +47,7 @@ const Layout = (props) => {
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    const toggleMenuCallback = () => {
+    function toggleMenuCallback() {
         if (leftSideBarType === "default") {
             dispatch(changeSidebarType("condensed", isMobile));
         } else if (leftSideBarType === "condensed") {
@@ -55,24 +55,17 @@ const Layout = (props) => {
         }
     };
 
-    //hides right sidebar on body click
-    const hideRightbar = (event) => {
+    function hideRightbar(event) {
         var rightbar = document.getElementById("right-bar");
-        //if clicked in inside right bar, then do nothing
         if (rightbar && rightbar.contains(event.target)) {
             return;
         } else {
-            //if clicked in outside of rightbar then fire action for hide rightbar
             dispatch(showRightSidebarAction(false));
         }
     };
 
-    /*
-  layout  settings
-  */
 
     useEffect(() => {
-        //init body click event fot toggle rightbar
         document.body.addEventListener("click", hideRightbar, true);
 
         if (isPreloader === true) {
@@ -133,9 +126,10 @@ const Layout = (props) => {
         }
     }, [topbarTheme, dispatch]);
 
+
     return (
-        <React.Fragment>
-            <div id="preloader">
+        <>
+            <div id="preloader" >
                 <div id="status">
                     <div className="spinner-chase">
                         <div className="chase-dot" />
@@ -159,7 +153,7 @@ const Layout = (props) => {
                 <Footer />
             </div>
             {showRightSidebar ? <RightSidebar /> : null}
-        </React.Fragment>
+        </>
     );
 };
 

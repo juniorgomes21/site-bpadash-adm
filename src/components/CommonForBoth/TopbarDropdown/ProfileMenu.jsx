@@ -6,36 +6,13 @@ import {
     DropdownMenu,
     DropdownItem,
 } from "reactstrap";
-
-//i18n
 import { withTranslation } from "react-i18next";
-// Redux
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
+import bpaLogo from "../../../assets/images/logo_bpadash_dark.png";
 
-// users
-import user1 from "../../../assets/images/logo_bpadash_dark.png";
-
-const ProfileMenu = (props) => {
-    // Declare a new state variable, which we'll call "menu"
+function ProfileMenu(props) {
     const [menu, setMenu] = useState(false);
-
-    const [username, setusername] = useState("Admin");
-
-    useEffect(() => {
-        if (localStorage.getItem("authUser")) {
-            if (import.meta.env.VITE_APP_DEFAULTAUTH === "firebase") {
-                const obj = JSON.parse(localStorage.getItem("authUser"));
-                setusername(obj.displayName);
-            } else if (
-                import.meta.env.VITE_APP_DEFAULTAUTH === "fake" ||
-                import.meta.env.VITE_APP_DEFAULTAUTH === "jwt"
-            ) {
-                const obj = JSON.parse(localStorage.getItem("authUser"));
-                setusername(obj.username);
-            }
-        }
-    }, [props.success]);
 
     return (
         <>
@@ -51,28 +28,19 @@ const ProfileMenu = (props) => {
                 >
                     <img
                         className="rounded-circle header-profile-user bg-blue-600"
-                        src={user1}
+                        src={bpaLogo}
                         alt="Header Avatar"
                     />
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-menu-end">
-                    <DropdownItem tag="a" href="/profile">
+                    <DropdownItem tag="a" href="#">
                         {" "}
                         <i className="bx bx-user font-size-16 align-middle me-1" />
-                        {props.t("Profile")}{" "}
-                    </DropdownItem>
-                    <DropdownItem tag="a" href="/crypto-wallet">
-                        <i className="bx bx-wallet font-size-16 align-middle me-1" />
-                        {props.t("My Wallet")}
+                        {props.t("Perfil")}{" "}
                     </DropdownItem>
                     <DropdownItem tag="a" href="#">
-                        <span className="badge bg-success float-end">11</span>
                         <i className="bx bx-wrench font-size-16 align-middle me-1" />
-                        {props.t("Settings")}
-                    </DropdownItem>
-                    <DropdownItem tag="a" href="auth-lock-screen">
-                        <i className="bx bx-lock-open font-size-16 align-middle me-1" />
-                        {props.t("Lock screen")}
+                        {props.t("Configurações")}
                     </DropdownItem>
                     <div className="dropdown-divider" />
                     <Link to="/logout" className="dropdown-item">

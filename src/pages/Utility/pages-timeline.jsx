@@ -41,7 +41,7 @@ const PagesTimeline = () => {
   ];
 
   //meta title
-  document.title = "Timeline | apcodes - Vite React Admin & Dashboard Template";
+  document.title = "Timeline | bpadashAdm - Vite React Admin & Dashboard Template";
 
   return (
     <React.Fragment>
