@@ -62,7 +62,7 @@ function Login(props) {
                                         <Col xs={7}>
                                             <div className="text-primary p-4">
                                                 <h5 className="text-primary">
-                                                    olá Administrador!
+                                                    Olá Administrador!
                                                 </h5>
                                                 <p>
                                                     Faça login para ter acesso a plataforma.

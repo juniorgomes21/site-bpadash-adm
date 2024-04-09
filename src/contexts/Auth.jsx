@@ -23,6 +23,7 @@ export function AuthProvider({ children }) {
     const [dates, setDates] = useState(datesL);
     const [openDialog, setOpenDialog] = useState(false);
     const [errorLogin, setErrorLogin] = useState(false);
+    const [errorCode, setErrorCode] = useState(false);
     const [msgError, setMsgError] = useState("Ops, algo deu errado!");
     const [state, setState] = useState({ openSnackBar: false, vertical: 'top', horizontal: 'center' });
 
@@ -46,9 +47,9 @@ export function AuthProvider({ children }) {
         try {
             const response = await api.post('/adm/auth', { "email": email, "password": password });
 
-            localStorage.setItem("@TokenAuthentication", response.data.token);
+            localStorage.setItem("@TokenTemp", response.data);
 
-            window.location.href = "/dashboard";
+            window.location.href = "/confirm/code";
 
         } catch (e) {
             const response = e.response.data;
@@ -61,6 +62,36 @@ export function AuthProvider({ children }) {
             }
             
             setErrorLogin(true);
+        }
+        setLoadingLogin(false);
+    }
+
+    async function handleCode(code) {
+        setLoadingLogin(true);
+        try {
+            const response = await api.post('/adm/verify/code', { "code": code }, { headers: {'Authorization' : `Bearer ${localStorage.getItem("@TokenTemp")}`}} );
+
+            localStorage.setItem("@TokenAuthentication", response.data.token);
+
+            window.location.href = "/dashboard";
+
+        } catch (e) {
+            console.log(e);
+            const response = e.response.data;
+            
+            switch (response) {
+                case "INVALID CODE": {
+                    setMsgError("Código inválido ou já usado!");
+                    break;
+                } case "EXPIRED CODE": {
+                    setMsgError("Código expirado!");
+                    break;
+                } default: {
+                    setMsgError("Ops, algo deu errado!");
+                }
+            }
+            
+            setErrorCode(true);
         }
         setLoadingLogin(false);
     }
@@ -79,7 +110,7 @@ export function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ dates, loadingLogin, errorLogin, msgError, handleLogin, handleLogout }}>
+        <AuthContext.Provider value={{ dates, loadingLogin, errorCode, errorLogin, msgError, handleLogin, handleCode, handleLogout }}>
             {children}
         </AuthContext.Provider>
     )

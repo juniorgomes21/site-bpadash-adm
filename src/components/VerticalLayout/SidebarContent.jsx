@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 const SidebarContent = (props) => {
     const ref = useRef();
@@ -103,6 +103,14 @@ const SidebarContent = (props) => {
                                 <span>{props.t("Mensagens")}</span>
                             </Link>
                         </li>
+
+                        <li>
+                            <Link to="/validate/email/user" className="">
+                                <ContactMailIcon sx={{ fontSize: 20, mr: 1.5 }} />
+                                <span>{props.t("Validar Email")}</span>
+                            </Link>
+                        </li>
+
                         <li>
                             <Link to="/create/user" className="">
                                 <i className="bx bxs-user"></i>

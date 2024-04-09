@@ -6,6 +6,8 @@ import Messages from "../pages/Messages/Messages";
 import Dashboard from "../pages/Dashboard/index";
 import ManagerUser from "../pages/ManagerUser/ManagerUser";
 import CreateUser from "../pages/CreateUser/CreateUser";
+import ConfirmCode from "../pages/Authentication/ConfirmCode";
+import ValidateEmailUser from "../pages/ValidateEmailUser/ValidateEmailUser";
 
 
 const authProtectedRoutes = [
@@ -13,12 +15,15 @@ const authProtectedRoutes = [
     { path: "/messages/user", component: Messages },
     { path: "/create/user", component: CreateUser },
     { path: "/manager/user", component: ManagerUser },
+    { path: "/validate/email/user", component: ValidateEmailUser },
   
     { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
   ];
 
 const publicRoutes = [
     { path: "/login", component: Login },
+    { path: "/confirm/code", component: ConfirmCode },
+
     { path: "/logout", component: Logout },
 ];
 

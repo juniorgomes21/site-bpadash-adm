@@ -15,6 +15,7 @@ import api from "../../services/api";
 import Switch from '@mui/material/Switch';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import SnackBarContext from "../../contexts/managerService";
+import { maskCell, maskCNPJ } from "../../Validation&Formatation/formatation";
 
 
 function ManagerUser(props) {
@@ -34,6 +35,7 @@ function ManagerUser(props) {
     async function getUsers() {
         try {
             const response = await api.get('/adm/users/get/all');
+            console.log(response.data);
             setUsers(response.data);
 
         } catch(e) {
@@ -63,6 +65,9 @@ function ManagerUser(props) {
                             <TableRow>
                                 <TableCell>Nome</TableCell>
                                 <TableCell align="center">Pacote</TableCell>
+                                <TableCell align="center">Email</TableCell>
+                                <TableCell align="center">Contato</TableCell>
+                                <TableCell align="center">CNPJ</TableCell>
                                 <TableCell align="center">Armazenamento usado</TableCell>
                                 <TableCell align="center">Armazenamento total</TableCell>
                                 <TableCell align="center">Ativo</TableCell>
@@ -96,6 +101,9 @@ function ManagerUser(props) {
                                         }}
                                     />
                                 </TableCell>
+                                <TableCell align="center">{user.email}</TableCell>
+                                <TableCell align="center">{maskCell(user.contact)}</TableCell>
+                                <TableCell align="center">{maskCNPJ(user.cnpj)}</TableCell>
                                 <TableCell align="center">{user.storageUsed}</TableCell>
                                 <TableCell align="center">{user.totalStorage}</TableCell>
                                 <TableCell align="center">

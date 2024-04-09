@@ -197,14 +197,12 @@ export function formatDateAndHours(date: string) {
 }
 
 export function maskCell(num: string) {
-        
-    // num = num.replace(/\D/g,'');
-    // num = num.replace(/(\d{2})(\d)/,"($1) $2");
-    // num = num.replace(/(\d)(\d{4})$/,"$1-$2");
+    return "(" + num.substring(0, 2) + ") " + num.substring(2, 3)  + " " + num.substring(3, 7) + "-" + num.substring(7, 11);
+}
 
-    // return num;
+export function maskCNPJ(cnpj: string) {
 
-    return num.substring(0, 1) + " " + num.substring(1, 5) + "-" + num.substring(5, 9);
+    return cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
 }
 
 export function unformatCell(num: string) {

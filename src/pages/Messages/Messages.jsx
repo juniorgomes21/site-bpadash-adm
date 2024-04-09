@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import api from "../../services/api";
-import { formatDateAndHours } from "../../Validation&Formatation/formatation";
+import { formatDateAndHours, maskCell } from "../../Validation&Formatation/formatation";
 import CheckIcon from '@mui/icons-material/Check';
 import Tooltip from "@mui/material/Tooltip";
 import SnackBarContext from "../../contexts/managerService";
@@ -29,11 +29,9 @@ function Messages(props) {
     }, [])
     
     async function getMessages() {
-        console.log("0i");
         setLoading(true);
         try {
             const response = await api.get("/adm/messages");
-            console.log(response.data);
             setMessages(response.data);
 
         } catch (e) {
@@ -143,6 +141,10 @@ function Messages(props) {
                                                     <div>
                                                         <p className="font-bold">Email:</p>
                                                         <p className="ml-4">{message.email}</p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="font-bold">WhatsApp:</p>
+                                                        <p className="ml-4">{message.cell != "" ? maskCell(message.cell) : "Sem número"}</p>
                                                     </div>
                                                     <div>
                                                         <p className="font-bold">Mensagem:</p>
